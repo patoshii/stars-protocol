@@ -1,5 +1,7 @@
 ## STARS (Smart Transaction API Reoccuring Service) Protocol ##
 
+"An API service to setup reoccuring cryptocurrency payments using a shared private key."
+
 Version 1.0 - (Alpha - Experimental POC)
 
 Cryptocurrency is based off of a push payment system, meaning users control their own private keys and only send out when they need to. The typical financial system is a "pull" system where users have semi-control over their funds. Merchants and service providers are authorized to "pull" funds out of users accounts when paying with a credit / debit card. We've built something similar for the cryptocurrency world, users still control their private keys, but gives the merchants the ability to "pull" funds out of their private keys when needed. This opens up many new business use cases for Bitcoin and the cryptocurrency ecosystem.
