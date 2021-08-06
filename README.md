@@ -41,25 +41,24 @@ Now you can process bitcoin private keys and send coins from one address to anot
 
 ### Frequently Asked Questions: ###
 - **Do you hold our coins?** No we do not, you still have access to your coins until they are sent. The only thing we have is your private key that is only used during transaction processing. Hence, this is not a custodial type of service, but a shared private key system we've built. It's the same concept as a credit card, merchants have access to charge your card but you also have the ability to remove your funds too. This avoids the "not your keys, not your coins" problem.
-- **How do you protect the private keys?** All private keys are encrypted before sending it over the internet for processing. This data is encrypted and then we broadcast it through Ardor testnet nodes. Hence our servers have no front facing internet address.
-- **Why are you using the testnet Ardor blockchain and not mainnet?** In our testing phase we're using testnet for now as coins are free, and all of this data doesn't need to be stored forever. We do plan on going mainnet when this service is fully operational.  
-- **Can I use this service locally?** You can either send the api calls through an online Ardor testnet node such as https://testardor.jelurida.com, or you can install the Ardor testnet node on your computer and send the same api calls to http://localhost:26876
-- **What format does your api service accept?** Send a single line encrypted message in JSON format to account: ARDOR-XXXX-XXXX-5496-B3YAC - A fail or success response will be returned after 2-3 minutes.
-- **How do I get a status on my transaction?** We send out failure or success messages to your Ardor testnet account.
+- **How do you protect the private keys?** All private keys are encrypted before sending it over the internet for processing. This data is encrypted and then we broadcast it through the Annex Network nodes. Hence our servers have no front facing internet address.
+- **Can I use this service locally?** You can either send the api calls through an online Annex Network node such as https://node101.annex.network, or you can install the Annex Network node on your computer and send the same api calls to http://localhost:6876
+- **What format does your api service accept?** Send a single line encrypted message in JSON format to account: COIN-XXXX-XXXX-5496-B3YAC - A fail or success response will be returned after 2-3 minutes.
+- **How do I get a status on my transaction?** We send out failure or success messages to your Annex Network account.
 - **What if I lose coins from my wallet?** You are responsible of keep track of your own private keys and only store what is necessary and not use this shared private key for anything else. If you suspect your keys are compromised, use another private key. Keep in mind this service is experimental and use at your own risk. 
 - **Is there a fee to use this service?** Currently in our alpha phase, there will be no fee. The only fee you will be paying is the transaction fee on the blockchain. Future proposed fees would be based on a freemium model.
-- **Why is there no IP or domain URL to access this service?** By using an existing blockchain distributed node system, we're able to limit the attack surface of our service substantially. We chose the Ardor blockchain, due to the technological advantages compared to other systems such as the ability to: encrypt messages, access to distributed nodes, and provide feeless transactions.
+- **Why is there no IP or domain URL to access this service?** By using an existing blockchain distributed node system, we're able to limit the attack surface of our service substantially. We chose the Annex Network, due to the technological advantages compared to other systems such as the ability to: encrypt messages, access to distributed nodes, and provide feeless transactions.
 - **Is there a limit of how many transactions an account can create?** Currently there is no limit while testing, but we will most likely add in a rate limit for those passing in large amounts of transactions. 
 
 ---------------------
 
 ### How to access this forwarding service? ###
-In order to prevent hacks, spam, and being distributed, we require all API calls sent via the Testnet Ardor messaging system. There is no direct IP address to our forwarding service as it is hidden behind blockchain nodes. You can send an encrypted message using a public Ardor testnet node such as https://testardor.jelurida.com or host one locally by installing a testnet Ardor node (ardorplatform.com). The following JSON format must be sent as an encrypted message to the processing Ardor account: ARDOR-XXXX-XXXX-5496-B3YAC in the following format in a single line:
+In order to prevent hacks, spam, and being distributed, we require all API calls sent via the Annex Network messaging system. There is no direct IP address to our forwarding service as it is hidden behind blockchain nodes. You can send an encrypted message using a public Annex Network node such as https://node101.annex.network or host one locally by installing a node (annex.network). The following JSON format must be sent as an encrypted message to the processing account: COIN-XXXX-XXXX-5496-B3YAC in the following format in a single line:
 
 **Beautified Version**
 ```
 {
-"nxtAddress" : "YOUR_ARDOR_ADDRESS",
+"nxtAddress" : "YOUR_COIN_ADDRESS",
 "coinType" : "btc",
 "senderPub" : "1xxxxxxx",
 "senderPrv" : "5xxxxxx",
@@ -73,7 +72,7 @@ In order to prevent hacks, spam, and being distributed, we require all API calls
 ## Accepted API Parameters ##
 
 **nxtAddress:** -- OPTIONAL
-- not-empty = An Ardor address to receive a status update on the transaction.
+- not-empty = A address to receive a status update on the transaction.
 - empty = If empty, it will default to the sender's account.
 
 **coinChosen:** -- REQUIRED
